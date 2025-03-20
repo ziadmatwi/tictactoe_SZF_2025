@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    max-width: 800px;
+    margin: auto;
+}
+
+.jatekter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px, solid black;
+}
+
+.elem {
+    height: 100px;
+    border: 1px, solid black;
+}
+
