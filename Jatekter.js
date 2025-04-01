@@ -6,19 +6,19 @@ export default class Jatekter {
     #lepes = 0;
 
     constructor(szElem) {
-        let infoPanel = document.querySelector("aside")
+        let infoPanel = document.querySelector("aside p")
         this.info = new Info(infoPanel)
         this.info.megjelenit("X")
         this.szElem = szElem;
         this.megjelenit();
         this.esemenykezelok();
     }
-setLista(lista){
-    this.#lista=lista
-}
-getLista(){
-    return this.#lista
-}
+    setLista(lista) {
+        this.#lista = lista
+    }
+    getLista() {
+        return this.#lista
+    }
     megjelenit() {
         for (let index = 0; index < this.#lista.length; index++) {
             const element = this.#lista[index];
@@ -28,7 +28,7 @@ getLista(){
 
     esemenykezelok() {
         window.addEventListener("kivalaszt", (event) => {
-          
+
             if (this.#lepes % 2 === 0) {
                 this.#lista[event.detail] = "X";
                 this.info.megjelenit("O")
@@ -39,7 +39,11 @@ getLista(){
             this.#lepes++;
             this.szElem.innerHTML = "";
             this.megjelenit();
-          
+            let gyoztes = this.gyozelemEllenorzes()
+            console.log(gyoztes)
+            if (gyoztes != "-") {
+                alert(`A győztes: ${gyoztes}`)
+            }
         })
     }
 
@@ -53,17 +57,17 @@ getLista(){
         allapot += this.atlo_ell();
         const ALLAPOT_TOMB = allapot.split("@");
         //   console.log(allapot);
-     
-       
-            if (ALLAPOT_TOMB.indexOf("OOO") >= 0) {
-               
-                return "O";
-            }
-            if (ALLAPOT_TOMB.indexOf("XXX") >= 0) {
-                return "X";
-            }
-            return "-";
-       
+
+
+        if (ALLAPOT_TOMB.indexOf("OOO") >= 0) {
+
+            return "O";
+        }
+        if (ALLAPOT_TOMB.indexOf("XXX") >= 0) {
+            return "X";
+        }
+        return "-";
+
     }
 
     vizszintes_ell() {

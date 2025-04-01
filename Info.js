@@ -4,6 +4,6 @@ export default class Info {
     }
 
     megjelenit(jatekos){
-        this.szElem.innerHTML = jatekos + "következik";
+        this.szElem.innerHTML = jatekos + " következik";
     }
 }

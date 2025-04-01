@@ -1,21 +1,23 @@
-*{
+* {
     box-sizing: border-box;
 }
 
 body {
-    display: grid;
+    text-align: center;
     max-width: 800px;
     margin: auto;
 }
 
 .jatekter {
+    width: calc(3*10vw + 20px);
+    margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    border: 1px, solid black;
+    grid-template-columns: repeat(3, 10vw);
+    gap: 10px;
 }
 
 .elem {
-    height: 100px;
+    aspect-ratio: 1;
     border: 1px, solid black;
+    font-size: 8vw;
 }
-
