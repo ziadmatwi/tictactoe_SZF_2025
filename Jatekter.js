@@ -40,9 +40,9 @@ export default class Jatekter {
             this.szElem.innerHTML = "";
             this.megjelenit();
             let gyoztes = this.gyozelemEllenorzes()
-            console.log(gyoztes)
+            //console.log(gyoztes)
             if (gyoztes != "-") {
-                alert(`A győztes: ${gyoztes}`)
+                //console.log(`A győztes: ${gyoztes}`)
             }
         })
     }
